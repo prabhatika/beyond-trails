@@ -1,0 +1,6042 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F6F0;
+    color: #252525;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #173F35;
+}
+
+/* =========================
+   NAVBAR LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #F8F6F0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   NAVBAR LOGO IMAGE
+========================= */
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #F8F6F0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #C56A45;
+}
+
+.book-btn {
+    text-decoration: none;
+    background-color: #C56A45;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 78vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 8%;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(5, 25, 22, 0.82) 0%,
+            rgba(5, 25, 22, 0.55) 45%,
+            rgba(5, 25, 22, 0.15) 100%
+        ),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    animation: heroZoom 14s ease-in-out infinite alternate;
+}
+
+
+/* Slow cinematic background movement */
+
+@keyframes heroZoom {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 108%;
+    }
+
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+
+    max-width: 760px;
+
+    animation: heroContentIn 1.2s ease-out forwards;
+}
+
+
+@keyframes heroContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Small heading */
+
+.hero-tag {
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 18px;
+}
+
+.hero-tag span {
+    color: #C56A45;
+    margin: 0 8px;
+}
+
+
+/* Orange decorative line */
+
+.hero-line {
+    width: 95px;
+    height: 2px;
+
+    background-color: #C56A45;
+
+    margin-bottom: 25px;
+
+    animation: lineGrow 1s ease-out;
+}
+
+
+@keyframes lineGrow {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 95px;
+    }
+
+}
+
+
+/* Main heading */
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: #F1D19B;
+}
+
+
+/* Description */
+
+.hero-text {
+    max-width: 550px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 38px;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 28px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    border-radius: 3px;
+
+    transition: all 0.3s ease;
+}
+
+
+.primary-btn {
+
+    background-color: #C56A45;
+
+    color: white;
+
+}
+
+
+.primary-btn:hover {
+
+    background-color: #a95332;
+
+    transform: translateY(-3px);
+
+}
+
+
+.secondary-btn {
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    color: white;
+
+    background-color: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+.secondary-btn:hover {
+
+    background-color: white;
+
+    color: #173F35;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+.hero-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.hero-particles span {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 5px;
+
+    background-color: rgba(222, 191, 105, 0.65);
+
+    border-radius: 100% 0 100% 0;
+
+    animation: floatingLeaf 10s linear infinite;
+
+}
+
+
+/* Different positions */
+
+.hero-particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-duration: 8s;
+}
+
+.hero-particles span:nth-child(2) {
+    left: 25%;
+    top: 70%;
+    animation-duration: 12s;
+}
+
+.hero-particles span:nth-child(3) {
+    left: 40%;
+    top: 35%;
+    animation-duration: 9s;
+}
+
+.hero-particles span:nth-child(4) {
+    left: 55%;
+    top: 75%;
+    animation-duration: 11s;
+}
+
+.hero-particles span:nth-child(5) {
+    left: 70%;
+    top: 25%;
+    animation-duration: 10s;
+}
+
+.hero-particles span:nth-child(6) {
+    left: 82%;
+    top: 60%;
+    animation-duration: 13s;
+}
+
+.hero-particles span:nth-child(7) {
+    left: 90%;
+    top: 35%;
+    animation-duration: 9s;
+}
+
+.hero-particles span:nth-child(8) {
+    left: 60%;
+    top: 15%;
+    animation-duration: 14s;
+}
+
+
+@keyframes floatingLeaf {
+
+    0% {
+        transform:
+            translate(0, -20px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translate(80px, 180px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translate(-40px, 400px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 28px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+
+
+.scroll-indicator p {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.mouse {
+
+    width: 25px;
+    height: 40px;
+
+    border: 2px solid white;
+
+    border-radius: 15px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+
+.mouse-wheel {
+
+    width: 4px;
+    height: 8px;
+
+    background-color: white;
+
+    border-radius: 4px;
+
+    position: absolute;
+
+    top: 7px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation: mouseMove 1.5s infinite;
+}
+@keyframes mouseMove {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+
+}
+.scroll-arrow {
+
+    font-size: 28px;
+
+    line-height: 15px;
+
+    animation: arrowBounce 1.5s infinite;
+}
+
+
+@keyframes arrowBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height: 560px;
+
+        padding: 50px 7% 65px;
+
+        background-position: 62% center;
+
+    }
+    .hero h1 {
+
+        font-size: clamp(48px, 14vw, 70px);
+
+    }
+    .hero-tag {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+    .hero-text {
+
+        font-size: 15px;
+
+    }
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+    .scroll-indicator {
+
+        display: none;
+
+    }
+
+}
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: white;
+
+    transition: 0.3s ease;
+}
+
+
+/* Mobile menu */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 6%;
+        position: relative;
+        z-index: 100;
+    }
+
+    .nav-links,
+    .navbar .book-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #173F35;
+
+        padding: 15px 8% 25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        z-index: 99;
+
+        transform: translateY(-20px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .mobile-menu.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+    .mobile-menu a {
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-book-btn {
+        background-color: #C56A45;
+
+        text-align: center;
+
+        margin-top: 15px;
+
+        padding: 13px !important;
+
+        border: none !important;
+
+        border-radius: 4px;
+
+        font-weight: 700;
+    }
+
+
+    /* Hamburger animation */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 620px;
+        height: auto;
+
+        padding: 65px 7% 85px;
+
+        background-position: 62% center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        margin-bottom: 14px;
+        white-space: nowrap;
+    }
+
+    .hero-tag span {
+        margin: 0 4px;
+    }
+
+    .hero-line {
+        width: 75px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: 0.98;
+        letter-spacing: -1px;
+        margin-bottom: 22px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 48px;
+
+        padding: 0 18px;
+
+        font-size: 12px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+}
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        padding: 15px 6%;
+        position: relative;
+        z-index: 100;
+    }
+
+    .nav-links,
+    .navbar .book-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+
+        width: 45px;
+        height: 45px;
+
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5px;
+    }
+
+    .menu-toggle span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        background-color: white;
+
+        transition: 0.3s ease;
+    }
+
+
+    /* ---------- MOBILE MENU ---------- */
+
+    .mobile-menu {
+        display: flex;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #173F35;
+
+        padding: 15px 8% 25px;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        z-index: 99;
+
+        transform: translateY(-20px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .mobile-menu.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+    .mobile-menu a {
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-book-btn {
+        background-color: #C56A45;
+
+        text-align: center;
+
+        margin-top: 15px;
+
+        padding: 13px !important;
+
+        border: none !important;
+
+        border-radius: 4px;
+
+        font-weight: 700;
+    }
+
+
+    /* ---------- HAMBURGER ANIMATION ---------- */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 520px;
+
+        padding: 45px 7% 60px;
+
+        background-position: 62% center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 12px;
+
+        white-space: nowrap;
+    }
+
+    .hero-tag span {
+        margin: 0 4px;
+    }
+
+    .hero-line {
+        width: 70px;
+
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        line-height: 0.98;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        font-size: 13.5px;
+
+        line-height: 1.55;
+
+        max-width: 100%;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ---------- HERO BUTTONS ---------- */
+
+    .hero-buttons {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        align-items: flex-start;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+
+        max-width: 280px;
+
+        min-height: 46px;
+
+        padding: 0 15px;
+
+        font-size: 11px;
+    }
+
+
+    /* ---------- SCROLL ---------- */
+
+    .scroll-indicator {
+        display: none;
+    }
+
+}
+/* =========================
+   HIGHLIGHTS SECTION
+========================= */
+
+.highlights {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background-color: #F8F6F0;
+
+    padding: 28px 7%;
+
+    border-bottom: 1px solid #ded9ce;
+}
+
+.highlight-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 12px 25px;
+
+    border-right: 1px solid #d5d0c5;
+}
+
+.highlight-item:last-child {
+    border-right: none;
+}
+
+.highlight-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 25px;
+}
+
+.highlight-item h3 {
+    color: #173F35;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.highlight-item p {
+    color: #555;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =========================
+   MOBILE HIGHLIGHTS
+========================= */
+
+@media (max-width: 768px) {
+
+    .highlights {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 20px 5%;
+
+        gap: 0;
+    }
+
+    .highlight-item {
+        padding: 18px 10px;
+
+        gap: 10px;
+
+        border-right: none;
+        border-bottom: 1px solid #d5d0c5;
+    }
+
+    .highlight-item:nth-child(odd) {
+        border-right: 1px solid #d5d0c5;
+    }
+
+    .highlight-item:nth-child(3),
+    .highlight-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .highlight-icon {
+        width: 35px;
+        height: 35px;
+
+        font-size: 20px;
+    }
+
+    .highlight-item h3 {
+        font-size: 12px;
+    }
+
+    .highlight-item p {
+        font-size: 10px;
+    }
+
+}
+/* =========================================================
+   TRIPS & TREKKING SECTION
+========================================================= */
+
+.trips-section {
+    background: #F8F6F0;
+    padding: 100px 5%;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.trips-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.section-tag {
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #C56A45;
+    margin-bottom: 12px;
+}
+
+.trips-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #173F35;
+    margin-bottom: 15px;
+}
+
+.trips-heading h2 span {
+    color: #C56A45;
+}
+
+.section-description {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================
+   TRIPS GRID
+========================= */
+
+.trips-grid {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+/* =========================
+   TRIP CARD
+========================= */
+
+.trip-card {
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(23, 63, 53, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(23, 63, 53, 0.14);
+}
+
+
+/* =========================
+   TRIP IMAGE
+========================= */
+
+.trip-image {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.trip-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.trip-card:hover .trip-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   TRIP CATEGORY
+========================= */
+
+.trip-category {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #173F35;
+    color: #ffffff;
+
+    padding: 7px 10px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   TRIP INFORMATION
+========================= */
+
+.trip-info {
+    padding: 20px 17px 18px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.trip-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    color: #173F35;
+
+    margin-bottom: 11px;
+}
+
+.trip-location,
+.trip-duration {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    color: #666;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================
+   PRICE + SEATS
+========================= */
+
+.trip-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+    padding-top: 13px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.trip-bottom strong {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #173F35;
+}
+
+.trip-bottom small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 9px;
+    color: #777;
+}
+
+.seats {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.seats.available {
+    color: #4C8A68;
+}
+
+
+/* =========================
+   TRIP BUTTONS
+========================= */
+
+.trip-buttons {
+    display: flex;
+    gap: 7px;
+
+    margin-top: 17px;
+}
+
+.details-btn,
+.card-book-btn {
+    flex: 1;
+
+    min-height: 39px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    transition: 0.25s ease;
+}
+
+.details-btn {
+    color: #173F35;
+    border: 1px solid #173F35;
+}
+
+.details-btn:hover {
+    background: #173F35;
+    color: #ffffff;
+}
+
+.card-book-btn {
+    background: #C56A45;
+    color: #ffffff;
+    border: 1px solid #C56A45;
+}
+
+.card-book-btn:hover {
+    background: #173F35;
+    border-color: #173F35;
+}
+
+
+/* =========================================================
+   EXTRA TRIPS
+   Hidden initially
+========================================================= */
+
+.extra-trip {
+    display: none;
+}
+
+
+/* =========================================================
+   SEE MORE TRIPS
+========================================================= */
+
+.see-more-trips {
+    text-align: center;
+    margin-top: 45px;
+}
+
+#seeMoreTrips {
+    background: transparent;
+    border: none;
+
+    padding: 8px 5px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #173F35;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #173F35;
+
+    transition: 0.25s ease;
+}
+
+#seeMoreTrips span {
+    margin-left: 7px;
+    transition: transform 0.25s ease;
+}
+
+#seeMoreTrips:hover {
+    color: #C56A45;
+    border-color: #C56A45;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 769px) {
+
+    .trips-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .trips-section {
+        padding: 75px 6%;
+    }
+
+    .trips-heading {
+        margin-bottom: 38px;
+    }
+
+    .trips-heading h2 {
+        font-size: 38px;
+    }
+
+    .section-description {
+        font-size: 13px;
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .trip-image {
+        height: 245px;
+    }
+
+    .trip-info {
+        padding: 20px;
+    }
+
+    .trip-info h3 {
+        font-size: 23px;
+    }
+
+    .trip-location,
+    .trip-duration {
+        font-size: 12px;
+    }
+
+    .trip-bottom strong {
+        font-size: 18px;
+    }
+
+    .seats {
+        font-size: 9px;
+    }
+
+    .details-btn,
+    .card-book-btn {
+        font-size: 9px;
+        min-height: 38px;
+    }
+
+    .see-more-trips {
+        margin-top: 35px;
+    }
+
+}
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+    padding: 100px 5%;
+    background: #ffffff;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.about-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #C56A45;
+    margin-bottom: 15px;
+}
+
+.about-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #173F35;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.stat-box h3 {
+    font-size: 32px;
+    color: #173F35;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:768px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-stats {
+        justify-content: space-between;
+    }
+
+}
+/* =========================================================
+   STAY WITH US — OUR OWN HOMESTAY SECTION
+========================================================= */
+
+.stay-section {
+    padding: 100px 5%;
+    background: #E8DCC8;
+}
+
+.stay-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   STAY IMAGE
+========================= */
+
+.stay-image {
+    position: relative;
+
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.stay-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.stay-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   STAY BADGE
+========================= */
+
+.stay-badge {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 12px;
+
+    background: #173F35;
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   STAY CONTENT
+========================= */
+
+.stay-content {
+    max-width: 500px;
+}
+
+.stay-tag {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #C56A45;
+
+    margin-bottom: 15px;
+}
+
+.stay-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 46px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    color: #173F35;
+
+    margin-bottom: 25px;
+}
+
+.stay-content h2 span {
+    color: #C56A45;
+}
+
+.stay-text {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #5f5f5f;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   STAY LOCATION
+========================= */
+
+.stay-location {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+    margin-bottom: 28px;
+}
+
+.stay-location > span {
+    font-size: 22px;
+}
+
+.stay-location strong {
+    display: block;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #173F35;
+
+    margin-bottom: 4px;
+}
+
+.stay-location small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================
+   STAY BUTTON
+========================= */
+
+.stay-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 24px;
+
+    background: #173F35;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.stay-btn:hover {
+    background: #C56A45;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .stay-section {
+        padding: 75px 6%;
+    }
+
+    .stay-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .stay-image {
+        height: 360px;
+    }
+
+    .stay-content {
+        max-width: 100%;
+    }
+
+    .stay-content h2 {
+        font-size: 35px;
+    }
+
+    .stay-text {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .stay-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+}
+
+/* =========================================================
+   TRAVELER REVIEWS SECTION
+========================================================= */
+
+.reviews-section {
+    padding: 100px 5%;
+    background: #F8F6F0;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.reviews-heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.reviews-tag {
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #C56A45;
+    margin-bottom: 14px;
+}
+
+.reviews-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 46px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #173F35;
+    margin-bottom: 15px;
+}
+
+.reviews-heading h2 span {
+    color: #C56A45;
+}
+
+.reviews-description {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================
+   REVIEWS GRID
+========================= */
+
+.reviews-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   REVIEW CARD
+========================= */
+
+.review-card {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 35px 30px 30px;
+
+    border: 1px solid #eee;
+
+    transition: 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(23, 63, 53, 0.10);
+}
+
+
+/* =========================
+   QUOTE MARK
+========================= */
+
+.quote-mark {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    line-height: 0.8;
+
+    color: #C56A45;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.review-text {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   REVIEW AUTHOR
+========================= */
+
+.review-author {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #173F35;
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.review-author h4 {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #173F35;
+
+    margin-bottom: 3px;
+}
+
+.review-author p {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) and (min-width: 769px) {
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+        padding: 75px 6%;
+    }
+
+    .reviews-heading {
+        margin-bottom: 38px;
+    }
+
+    .reviews-heading h2 {
+        font-size: 36px;
+    }
+
+    .reviews-description {
+        font-size: 13px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .review-card {
+        padding: 30px 24px 25px;
+    }
+
+    .review-text {
+        font-size: 13px;
+    }
+
+}
+/* =========================================================
+   FINAL CALL TO ACTION SECTION
+========================================================= */
+
+.final-cta {
+    position: relative;
+
+    padding: 110px 5%;
+
+    background:
+        linear-gradient(
+            rgba(23, 63, 53, 0.88),
+            rgba(23, 63, 53, 0.88)
+        ),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-tag {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #E8DCC8;
+
+    margin-bottom: 15px;
+}
+
+.cta-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 600;
+
+    color: #ffffff;
+
+    margin-bottom: 18px;
+}
+
+.cta-content h2 span {
+    color: #E8DCC8;
+}
+
+.cta-content > p {
+    font-family: "DM Sans", sans-serif;
+
+    max-width: 550px;
+    margin: 0 auto 30px;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 27px;
+
+    background: #C56A45;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #ffffff;
+    color: #173F35;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #173F35;
+    color: #ffffff;
+
+    padding: 70px 5% 25px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1.3fr
+        1fr;
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================
+   FOOTER BRAND
+========================= */
+
+.footer-logo {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    font-weight: 400;
+}
+
+.footer-brand > p {
+    max-width: 270px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================
+   FOOTER HEADINGS
+========================= */
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+
+    color: #E8DCC8;
+}
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links a {
+    width: fit-content;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   FOOTER CONTACT
+========================= */
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-contact p {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================
+   FOOTER SOCIAL
+========================= */
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.social-links a {
+    width: fit-content;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 22px auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .final-cta {
+        padding: 80px 6%;
+    }
+
+    .cta-content h2 {
+        font-size: 38px;
+    }
+
+    .cta-content > p {
+        font-size: 13px;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 55px 7% 22px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+
+        padding-bottom: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+}
+/* =========================================================
+   SANDAKPHU TRIP DETAILS PAGE
+========================================================= */
+
+
+/* =========================
+   PAGE
+========================= */
+
+.trip-details-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 35px 3%;
+    background: #f8f6f0;
+    color: #252525;
+    font-family: "DM Sans", sans-serif;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-trips {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #173f35;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.trip-hero {
+    position: relative;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.trip-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.05)
+    );
+}
+
+.trip-hero-content {
+    position: absolute;
+    left: 5%;
+    bottom: 55px;
+    max-width: 600px;
+    color: white;
+}
+
+.trip-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.trip-hero-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.trip-hero-content p:last-child {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 580px;
+}
+
+
+/* =========================
+   QUICK INFO BAR
+========================= */
+
+.trip-info-bar {
+    position: relative;
+    width: 95%;
+    margin: -20px auto 30px;
+    background: white;
+    border: 1px solid #e5dfd3;
+    border-radius: 12px;
+    padding: 22px 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.quick-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-right: 1px solid #e8e2d8;
+}
+
+.quick-info:last-child {
+    border-right: none;
+}
+
+.quick-icon {
+    font-size: 27px;
+    color: #173f35;
+}
+
+.quick-info strong {
+    display: block;
+    font-size: 15px;
+    color: #173f35;
+}
+
+.quick-info small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 11px;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.trip-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 30px 0 60px;
+}
+
+.gallery-image {
+    height: 210px;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.trip-main-content {
+    display: grid;
+    grid-template-columns: 1.7fr .9fr;
+    gap: 60px;
+}
+
+
+/* =========================
+   SECTION LABEL
+========================= */
+
+.section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c56a45;
+    margin-bottom: 8px;
+}
+
+.section-label.red {
+    color: #c94d32;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.about-journey h2,
+.itinerary-section h2,
+.include-card h2 {
+    font-family: "Playfair Display", serif;
+    color: #173f35;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-journey h2 {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.about-journey p:not(.section-label) {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   ITINERARY
+========================= */
+
+.itinerary-section {
+    margin-top: 50px;
+}
+
+.itinerary-section h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.day-item {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 25px;
+    padding: 0 0 32px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e2ddd4;
+}
+
+.day-number {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #d9d2c5;
+    border-radius: 9px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #173f35;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.day-number strong {
+    font-size: 22px;
+    font-family: "Playfair Display", serif;
+}
+
+.day-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    color: #173f35;
+    margin-bottom: 8px;
+}
+
+.day-content h3 span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    color: #777;
+    font-weight: 500;
+}
+
+.day-content p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.day-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #555;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.trip-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.include-card {
+    background: white;
+    border: 1px solid #e3ddd2;
+    border-radius: 10px;
+    padding: 28px;
+}
+
+.include-card h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.include-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.include-card li {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 13px;
+}
+
+.include-card li::first-letter {
+    color: #173f35;
+}
+
+.not-included li {
+    color: #666;
+}
+
+
+/* =========================
+   BOOKING CARD
+========================= */
+
+.booking-card {
+    background: #173f35;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.booking-card p {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.booking-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.big-book-btn {
+    display: block;
+    text-align: center;
+    background: #c56a45;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.booking-card small {
+    display: block;
+    margin-top: 15px;
+    font-size: 11px;
+}
+
+
+/* =========================
+   TRIP HIGHLIGHTS
+========================= */
+
+.trip-highlights {
+    background: white;
+    border: 1px solid #e3ddd2;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.trip-highlights div {
+    padding: 20px 12px;
+    text-align: center;
+    border-right: 1px solid #e3ddd2;
+}
+
+.trip-highlights div:last-child {
+    border-right: none;
+}
+
+.trip-highlights strong {
+    display: block;
+    font-size: 11px;
+    color: #173f35;
+    margin-bottom: 8px;
+}
+
+.trip-highlights span {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FINAL QUOTE
+========================= */
+
+.trip-quote {
+    margin-top: 50px;
+    padding: 25px;
+    background: #f2e8d7;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.trip-quote span {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #b9ae9d;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #173f35;
+}
+
+.trip-quote p {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #173f35;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .trip-details-page {
+        padding: 22px 5%;
+    }
+
+    .trip-hero {
+        height: 420px;
+    }
+
+    .trip-hero-content {
+        left: 7%;
+        right: 7%;
+        bottom: 35px;
+    }
+
+    .trip-hero-content h1 {
+        font-size: 43px;
+    }
+
+    .trip-hero-content p:last-child {
+        font-size: 13px;
+    }
+
+    .trip-info-bar {
+        width: 100%;
+        margin-top: -15px;
+        padding: 18px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-info {
+        border-right: none;
+    }
+
+    .trip-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-image {
+        height: 150px;
+    }
+
+    .trip-main-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-journey h2,
+    .itinerary-section h2 {
+        font-size: 32px;
+    }
+
+    .day-item {
+        grid-template-columns: 55px 1fr;
+        gap: 15px;
+    }
+
+    .day-number {
+        width: 50px;
+        height: 55px;
+    }
+
+    .day-number strong {
+        font-size: 19px;
+    }
+
+    .day-content h3 {
+        font-size: 18px;
+    }
+
+    .day-content p {
+        font-size: 12px;
+    }
+
+    .day-meta {
+        gap: 10px;
+    }
+
+    .include-card h2 {
+        font-size: 27px;
+    }
+
+    .trip-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-highlights div {
+        border-right: none;
+        border-bottom: 1px solid #e3ddd2;
+    }
+
+    .trip-highlights div:last-child {
+        border-bottom: none;
+    }
+
+    .trip-quote p {
+        font-size: 16px;
+    }
+}
+/* =========================
+   BOOKING PAGE SECTION
+========================= */
+
+.booking-page {
+    min-height: 100vh;
+    background: #f8f6f0;
+    padding: 80px 5%;
+    font-family: "DM Sans", sans-serif;
+    color: #252525;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================
+   BOOKING INTRO
+========================= */
+
+.booking-intro {
+    padding: 20px;
+}
+
+.booking-intro .section-label {
+    color: #c56a45;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.booking-intro h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 58px;
+    line-height: 1.05;
+    color: #173f35;
+    margin-bottom: 25px;
+}
+
+.booking-intro h1 span {
+    color: #c56a45;
+    font-style: italic;
+}
+
+.booking-description {
+    max-width: 450px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.booking-note {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd5c8;
+    max-width: 450px;
+}
+
+.booking-note span {
+    color: #c56a45;
+    font-size: 22px;
+}
+
+.booking-note p {
+    color: #173f35;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   BOOKING FORM CARD
+========================= */
+
+.booking-form-card {
+    background: white;
+    padding: 45px;
+    border: 1px solid #e2dbcf;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.form-label {
+    color: #c56a45;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.booking-form-card h2 {
+    font-family: "Playfair Display", serif;
+    color: #173f35;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM FIELDS
+========================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #173f35;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #ddd6ca;
+    border-radius: 5px;
+    background: #faf9f6;
+    color: #252525;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #173f35;
+    background: white;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.booking-submit {
+    width: 100%;
+    border: none;
+    padding: 16px 20px;
+    background: #c56a45;
+    color: white;
+    border-radius: 5px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.booking-submit span {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.booking-submit:hover {
+    background: #173f35;
+}
+
+
+/* =========================
+   MOBILE BOOKING PAGE
+========================= */
+
+@media (max-width: 768px) {
+
+    .booking-page {
+        padding: 45px 5%;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .booking-intro {
+        padding: 0;
+    }
+
+    .booking-intro h1 {
+        font-size: 42px;
+    }
+
+    .booking-description {
+        font-size: 13px;
+    }
+
+    .booking-form-card {
+        padding: 28px 22px;
+    }
+
+    .booking-form-card h2 {
+        font-size: 27px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+/* =========================================================
+   BOOKING SUCCESS MESSAGE — PREMIUM DESIGN
+========================================================= */
+
+.booking-success {
+    display: none !important;
+
+    text-align: center;
+
+    padding: 55px 35px;
+
+    animation: successFade 0.5s ease;
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.success-icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #173f35;
+
+    color: white;
+
+    font-size: 34px;
+    font-weight: 500;
+
+    box-shadow:
+        0 12px 30px rgba(23, 63, 53, 0.18);
+}
+
+
+/* =========================================================
+   SUCCESS HEADING
+========================================================= */
+
+.booking-success h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    color: #173f35;
+
+    margin: 0 0 15px;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE TEXT
+========================================================= */
+
+.booking-success p {
+
+    max-width: 420px;
+
+    margin: 0 auto 28px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SEND ANOTHER REQUEST BUTTON
+========================================================= */
+
+.booking-success button {
+
+    border: none;
+
+    background: #c56a45;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 5px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER EFFECT
+========================================================= */
+
+.booking-success button:hover {
+
+    background: #173f35;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE ANIMATION
+========================================================= */
+
+@keyframes successFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE SUCCESS MESSAGE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .booking-success {
+
+        padding: 40px 15px;
+
+    }
+
+    .success-icon {
+
+        width: 62px;
+        height: 62px;
+
+        font-size: 28px;
+
+    }
+
+    .booking-success h3 {
+
+        font-size: 28px;
+
+    }
+
+    .booking-success p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+}
+/* =========================================================
+   EXTRA TRIPS — SHOW WHEN BUTTON IS CLICKED
+========================================================= */
+
+.extra-trip {
+    display: none;
+}
+
+.extra-trip.show-trip {
+    display: block;
+}
+/* =========================================================
+   OUR STAYS PAGE — STEP 2A
+========================================================= */
+
+
+/* =========================
+   STAYS PAGE
+========================= */
+
+.stays-page {
+    min-height: 100vh;
+    background-color: #f8f6f0;
+    padding: 40px 6% 80px;
+}
+
+
+/* =========================
+   BACK TO HOME
+========================= */
+
+.back-home {
+    display: inline-block;
+    margin-bottom: 55px;
+
+    color: #173f35;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    transform: translateX(-5px);
+}
+
+
+/* =========================
+   STAYS INTRO
+========================= */
+
+.stays-intro {
+    max-width: 760px;
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+
+.stays-intro .section-label {
+    margin-bottom: 18px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+
+.stays-intro h1 {
+    margin: 0;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+
+.stays-intro h1 span {
+    display: block;
+
+    color: #c56a45;
+    font-style: italic;
+}
+
+
+.stays-intro > p:last-child {
+    max-width: 620px;
+    margin: 25px auto 0;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   STAYS GRID
+========================= */
+
+.stays-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   STAY CARD
+========================= */
+
+.stay-card {
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border: 1px solid rgba(23, 63, 53, 0.08);
+
+    box-shadow: 0 12px 35px rgba(23, 63, 53, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.stay-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(23, 63, 53, 0.14);
+}
+
+
+/* =========================
+   STAY CARD IMAGE
+========================= */
+
+.stay-card-image {
+    position: relative;
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.stay-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.stay-card:hover .stay-card-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   STAY CARD BADGE
+========================= */
+
+.stay-card-badge {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 12px;
+
+    background-color: #e8dcc8;
+
+    color: #173f35;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   STAY CARD CONTENT
+========================= */
+
+.stay-card-content {
+    padding: 25px 24px 27px;
+}
+
+
+.stay-card-location {
+    margin: 0 0 10px;
+
+    color: #c56a45;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+
+.stay-card-content h2 {
+    margin: 0 0 14px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+
+.stay-card-content > p:not(.stay-card-location) {
+    min-height: 78px;
+
+    margin: 0 0 25px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.stay-card-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eee;
+}
+
+
+.stay-card-bottom strong {
+    color: #173f35;
+
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   VIEW STAY BUTTON
+========================= */
+
+.view-stay-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 14px;
+
+    background-color: #173f35;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.view-stay-btn:hover {
+    background-color: #c56a45;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stays-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .stays-page {
+        padding: 25px 5% 60px;
+    }
+
+
+    .back-home {
+        margin-bottom: 40px;
+    }
+
+
+    .stays-intro {
+        margin-bottom: 45px;
+    }
+
+
+    .stays-intro h1 {
+        font-size: 45px;
+    }
+
+
+    .stays-intro > p:last-child {
+        font-size: 14px;
+    }
+
+
+    .stays-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .stay-card-image {
+        height: 280px;
+    }
+
+
+    .stay-card-content {
+        padding: 22px 20px 24px;
+    }
+
+
+    .stay-card-content h2 {
+        font-size: 24px;
+    }
+
+
+    .stay-card-content > p:not(.stay-card-location) {
+        min-height: auto;
+    }
+
+
+    .stay-card-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .view-stay-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   STAY DETAILS PAGE — PREMIUM DESIGN
+========================================================= */
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.stay-details-page {
+    min-height: 100vh;
+    background-color: #f8f6f0;
+    padding: 40px 6% 80px;
+}
+
+
+/* =========================
+   BACK TO STAYS
+========================= */
+
+.back-stays {
+    display: inline-block;
+
+    margin-bottom: 35px;
+
+    color: #173f35;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.back-stays:hover {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================================
+   STAY HERO
+========================================================= */
+
+.stay-detail-hero {
+    position: relative;
+
+    width: 100%;
+    height: 560px;
+
+    overflow: hidden;
+}
+
+
+.stay-detail-hero img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   HERO OVERLAY
+========================= */
+
+.stay-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.08)
+        );
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.stay-detail-hero-content {
+    position: absolute;
+
+    left: 6%;
+    bottom: 55px;
+
+    max-width: 750px;
+
+    color: #ffffff;
+}
+
+
+.stay-detail-label {
+    margin: 0 0 15px;
+
+    color: #e8dcc8;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+
+.stay-detail-hero-content h1 {
+    margin: 0 0 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+
+    font-weight: 600;
+}
+
+
+.stay-detail-hero-content > p:last-child {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   QUICK INFO BAR
+========================================================= */
+
+.stay-info-bar {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background-color: #ffffff;
+
+    border: 1px solid rgba(23, 63, 53, 0.08);
+
+    box-shadow: 0 12px 35px rgba(23, 63, 53, 0.07);
+}
+
+
+.stay-quick-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 25px;
+
+    border-right: 1px solid #eeeeee;
+}
+
+
+.stay-quick-info:last-child {
+    border-right: none;
+}
+
+
+.stay-info-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background-color: #e8dcc8;
+
+    color: #173f35;
+
+    font-size: 18px;
+}
+
+
+.stay-quick-info strong {
+    display: block;
+
+    color: #173f35;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.stay-quick-info small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #888;
+
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.stay-main-content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 340px;
+
+    gap: 70px;
+
+    max-width: 1250px;
+
+    margin: 85px auto 0;
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.stay-left {
+    min-width: 0;
+}
+
+
+.about-stay {
+    margin-bottom: 80px;
+}
+
+
+.section-label {
+    margin-bottom: 15px;
+
+    color: #c56a45;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+
+.about-stay h2,
+.stay-rooms-section > h2,
+.stay-gallery-section > h2 {
+    margin: 0 0 25px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.15;
+}
+
+
+#stayDescription p {
+    margin: 0 0 18px;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ROOMS SECTION
+========================================================= */
+
+.stay-rooms-section {
+    margin-bottom: 80px;
+}
+
+
+.rooms-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.room-card {
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border: 1px solid rgba(23, 63, 53, 0.08);
+
+    box-shadow: 0 10px 30px rgba(23, 63, 53, 0.06);
+
+    transition: 0.3s ease;
+}
+
+
+.room-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 16px 35px rgba(23, 63, 53, 0.11);
+}
+
+
+.room-card h3 {
+    margin: 0 0 10px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 23px;
+}
+
+
+.room-card p {
+    margin: 0 0 15px;
+
+    color: #666;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+.room-card span {
+    color: #c56a45;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.stay-gallery-section {
+    margin-bottom: 20px;
+}
+
+
+.stay-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.stay-gallery-image {
+    height: 280px;
+
+    overflow: hidden;
+
+    background-color: #ddd;
+}
+
+
+.stay-gallery-image:first-child {
+    grid-column: span 2;
+
+    height: 390px;
+}
+
+
+.stay-gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.stay-gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.stay-sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+.stay-side-card {
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border: 1px solid rgba(23, 63, 53, 0.08);
+
+    box-shadow: 0 10px 30px rgba(23, 63, 53, 0.06);
+}
+
+
+.stay-side-card h2 {
+    margin: 0 0 22px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+}
+
+
+.stay-side-card ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.stay-side-card li {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eeeeee;
+
+    color: #555;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+.stay-side-card li:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   BOOKING CARD
+========================================================= */
+
+.stay-booking-card {
+    padding: 35px 30px;
+
+    background-color: #173f35;
+
+    color: #ffffff;
+}
+
+
+.stay-booking-card > p {
+    margin: 0 0 12px;
+
+    color: #e8dcc8;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.stay-booking-card h2 {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+
+.stay-big-book-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: #c56a45;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.stay-big-book-btn:hover {
+    background-color: #e8dcc8;
+
+    color: #173f35;
+}
+
+
+.stay-booking-card small {
+    display: block;
+
+    margin-top: 15px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FINAL QUOTE
+========================================================= */
+
+.stay-quote {
+    max-width: 900px;
+
+    margin: 100px auto 0;
+
+    padding-top: 45px;
+
+    border-top: 1px solid rgba(23, 63, 53, 0.15);
+
+    text-align: center;
+}
+
+
+.stay-quote span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #c56a45;
+
+    font-size: 24px;
+}
+
+
+.stay-quote p {
+    margin: 0;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(25px, 4vw, 40px);
+
+    font-style: italic;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .stay-main-content {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .stay-sidebar {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        align-items: start;
+    }
+
+
+    .stay-booking-card {
+        grid-column: span 2;
+    }
+
+
+    .stay-info-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .stay-quick-info:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .stay-quick-info:nth-child(-n+2) {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .stay-details-page {
+        padding: 25px 5% 60px;
+    }
+
+
+    .back-stays {
+        margin-bottom: 25px;
+    }
+
+
+    .stay-detail-hero {
+        height: 470px;
+    }
+
+
+    .stay-detail-hero-content {
+        left: 7%;
+        right: 7%;
+
+        bottom: 35px;
+    }
+
+
+    .stay-detail-hero-content h1 {
+        font-size: 43px;
+    }
+
+
+    .stay-detail-hero-content > p:last-child {
+        font-size: 13px;
+    }
+
+
+    .stay-info-bar {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stay-quick-info {
+        border-right: none;
+
+        border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .stay-quick-info:last-child {
+        border-bottom: none;
+    }
+
+
+    .stay-main-content {
+        margin-top: 60px;
+
+        gap: 50px;
+    }
+
+
+    .about-stay,
+    .stay-rooms-section {
+        margin-bottom: 60px;
+    }
+
+
+    .rooms-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stay-gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stay-gallery-image:first-child {
+        grid-column: span 1;
+
+        height: 300px;
+    }
+
+
+    .stay-gallery-image {
+        height: 240px;
+    }
+
+
+    .stay-sidebar {
+        display: flex;
+    }
+
+
+    .stay-booking-card {
+        grid-column: auto;
+    }
+
+
+    .stay-side-card {
+        padding: 25px;
+    }
+
+
+    .stay-quote {
+        margin-top: 70px;
+    }
+
+}
+/* =========================================================
+   TRAVEL STORIES PAGE — PREMIUM DESIGN
+========================================================= */
+
+
+/* =========================
+   STORIES PAGE
+========================= */
+
+.stories-page {
+    min-height: 100vh;
+    padding: 50px 7%;
+    background-color: #f8f6f0;
+}
+
+
+/* =========================
+   BACK TO HOME
+========================= */
+
+.back-home {
+    display: inline-block;
+    margin-bottom: 60px;
+
+    text-decoration: none;
+    color: #173f35;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    color: #c56a45;
+    transform: translateX(-4px);
+}
+
+
+/* =========================
+   STORIES INTRO
+========================= */
+
+.stories-intro {
+    max-width: 760px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.stories-intro .section-label {
+    margin-bottom: 18px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.stories-intro h1 {
+    margin: 0 0 20px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+.stories-intro h1 span {
+    display: block;
+}
+
+.stories-intro > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   STORIES GRID
+========================================================= */
+
+.stories-section {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.stories-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   STORY CARD
+========================================================= */
+
+.story-card {
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(23, 63, 53, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 45px rgba(23, 63, 53, 0.14);
+}
+
+
+/* =========================
+   STORY CARD IMAGE
+========================= */
+
+.story-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+}
+
+.story-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.story-card:hover .story-card-image img {
+    transform: scale(1.07);
+}
+
+
+/* =========================
+   STORY CATEGORY
+========================= */
+
+.story-card-category {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 13px;
+
+    background-color: #173f35;
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   STORY CARD CONTENT
+========================================================= */
+
+.story-card-content {
+    padding: 28px 26px 30px;
+}
+
+
+/* =========================
+   STORY LOCATION
+========================= */
+
+.story-card-location {
+    margin: 0 0 12px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   STORY TITLE
+========================= */
+
+.story-card-content h2 {
+    margin: 0 0 14px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   STORY DESCRIPTION
+========================= */
+
+.story-card-content > p:not(.story-card-location) {
+    margin: 0 0 24px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   READ STORY BUTTON
+========================= */
+
+.read-story-btn {
+    display: inline-block;
+
+    color: #173f35;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.read-story-btn:hover {
+    color: #c56a45;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stories-intro h1 {
+        font-size: 46px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .stories-page {
+        padding: 30px 20px 50px;
+    }
+
+    .back-home {
+        margin-bottom: 45px;
+    }
+
+    .stories-intro {
+        margin-bottom: 50px;
+    }
+
+    .stories-intro h1 {
+        font-size: 38px;
+    }
+
+    .stories-intro > p:last-child {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .story-card-image {
+        height: 250px;
+    }
+
+    .story-card-content {
+        padding: 24px 22px 27px;
+    }
+
+    .story-card-content h2 {
+        font-size: 23px;
+    }
+
+}
+/* =========================================================
+   STORY DETAILS PAGE — PREMIUM DESIGN
+========================================================= */
+
+
+/* =========================
+   STORY DETAILS PAGE
+========================= */
+
+.story-details-page {
+    min-height: 100vh;
+    padding: 50px 7%;
+    background-color: #f8f6f0;
+}
+
+
+/* =========================
+   BACK TO STORIES
+========================= */
+
+.back-stories {
+    display: inline-block;
+
+    margin-bottom: 35px;
+
+    color: #173f35;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.back-stories:hover {
+    color: #c56a45;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   STORY HERO
+========================================================= */
+
+.story-detail-hero {
+    position: relative;
+
+    max-width: 1350px;
+    height: 580px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.story-detail-hero > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   HERO OVERLAY
+========================= */
+
+.story-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.05) 70%
+        );
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.story-detail-hero-content {
+    position: absolute;
+
+    left: 60px;
+    bottom: 55px;
+
+    max-width: 850px;
+
+    color: #ffffff;
+}
+
+.story-detail-category {
+    margin: 0 0 15px;
+
+    color: #e8dcc8;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-detail-hero-content h1 {
+    margin: 0 0 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 58px;
+    line-height: 1.1;
+}
+
+.story-detail-location {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   STORY MAIN CONTENT
+========================================================= */
+
+.story-main-content {
+    max-width: 1050px;
+
+    margin: 90px auto 0;
+}
+
+
+/* =========================================================
+   STORY INTRO
+========================================================= */
+
+.story-intro {
+    max-width: 820px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+.story-intro .section-label {
+    margin-bottom: 18px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-intro h2 {
+    margin: 0 0 25px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+    line-height: 1.25;
+}
+
+#storyIntroduction p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   FULL STORY
+========================================================= */
+
+.full-story {
+    max-width: 780px;
+
+    margin: 0 auto 100px;
+}
+
+#storyContent p {
+    margin: 0 0 28px;
+
+    color: #444;
+
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+#storyContent p:first-child::first-letter {
+    float: left;
+
+    padding: 8px 10px 0 0;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 64px;
+    font-weight: 700;
+
+    line-height: 0.8;
+}
+
+
+/* =========================================================
+   STORY HIGHLIGHTS
+========================================================= */
+
+.story-highlights {
+    margin-bottom: 100px;
+
+    text-align: center;
+}
+
+.story-highlights .section-label {
+    margin-bottom: 15px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-highlights h2 {
+    margin: 0 0 40px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+}
+
+
+/* =========================
+   HIGHLIGHT GRID
+========================= */
+
+.story-highlight-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.story-highlight-card {
+    padding: 30px 22px;
+
+    background-color: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 30px rgba(23, 63, 53, 0.07);
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+.story-highlight-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(23, 63, 53, 0.12);
+}
+
+.story-highlight-card span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #c56a45;
+
+    font-size: 24px;
+}
+
+.story-highlight-card h3 {
+    margin: 0 0 10px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+}
+
+.story-highlight-card p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STORY GALLERY
+========================================================= */
+
+.story-gallery-section {
+    margin-bottom: 100px;
+
+    text-align: center;
+}
+
+.story-gallery-section .section-label {
+    margin-bottom: 15px;
+
+    color: #c56a45;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-gallery-section h2 {
+    margin: 0 0 40px;
+
+    color: #173f35;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+}
+
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.story-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.story-gallery-image {
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+}
+
+.story-gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.story-gallery-image:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   STORY CLOSING
+========================================================= */
+
+.story-closing {
+    max-width: 800px;
+
+    margin: 0 auto 60px;
+    padding: 70px 40px;
+
+    background-color: #173f35;
+
+    border-radius: 22px;
+
+    text-align: center;
+}
+
+.story-closing .section-label {
+    margin-bottom: 18px;
+
+    color: #e8dcc8;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-closing h2 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+    line-height: 1.25;
+}
+
+.story-closing p:not(.section-label) {
+    max-width: 580px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CLOSING BUTTON
+========================= */
+
+.back-to-stories-btn {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background-color: #e8dcc8;
+    color: #173f35;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.back-to-stories-btn:hover {
+    background-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .story-detail-hero {
+        height: 500px;
+    }
+
+    .story-detail-hero-content {
+        left: 40px;
+        right: 40px;
+        bottom: 45px;
+    }
+
+    .story-detail-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .story-main-content {
+        margin-top: 70px;
+    }
+
+    .story-highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .story-details-page {
+        padding: 30px 20px 45px;
+    }
+
+    .back-stories {
+        margin-bottom: 25px;
+    }
+
+    .story-detail-hero {
+        height: 430px;
+
+        border-radius: 16px;
+    }
+
+    .story-detail-hero-content {
+        left: 25px;
+        right: 25px;
+        bottom: 30px;
+    }
+
+    .story-detail-category {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .story-detail-hero-content h1 {
+        font-size: 37px;
+    }
+
+    .story-detail-location {
+        font-size: 12px;
+    }
+
+    .story-main-content {
+        margin-top: 55px;
+    }
+
+    .story-intro {
+        margin-bottom: 55px;
+    }
+
+    .story-intro h2 {
+        font-size: 31px;
+    }
+
+    #storyIntroduction p {
+        font-size: 15px;
+    }
+
+    .full-story {
+        margin-bottom: 70px;
+    }
+
+    #storyContent p {
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    #storyContent p:first-child::first-letter {
+        font-size: 52px;
+    }
+
+    .story-highlights {
+        margin-bottom: 70px;
+    }
+
+    .story-highlights h2,
+    .story-gallery-section h2 {
+        font-size: 32px;
+    }
+
+    .story-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .story-gallery-image {
+        height: 260px;
+    }
+
+    .story-closing {
+        padding: 50px 25px;
+
+        border-radius: 18px;
+    }
+
+    .story-closing h2 {
+        font-size: 31px;
+    }
+
+}
+/* =========================================================
+   CONDITIONAL BOOKING FIELDS
+========================================================= */
+
+.booking-extra-fields {
+    display: none;
+}
+/* =========================================================
+   BOOKING PRICE BOX
+========================================================= */
+
+.booking-price-box {
+    display: none;
+
+    margin: 25px 0;
+
+    padding: 25px;
+
+    background-color: #173f35;
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.booking-price-box .price-label {
+    margin: 0 0 8px;
+
+    color: #e8dcc8;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.booking-price-box h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+}
+
+.booking-price-box #bookingPriceNote {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+/* =========================================================
+   TRIP DETAILS — PREVENT DEFAULT CONTENT FLASH
+========================================================= */
+
+.trip-details-page {
+    visibility: hidden;
+}
+/* =========================================================
+   ADMIN PANEL — PREMIUM DESIGN
+========================================================= */
+
+.admin-page {
+    min-height: 100vh;
+    background: #F8F6F0;
+    padding: 70px 5%;
+    font-family: "DM Sans", sans-serif;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   ADMIN HEADER
+========================= */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.admin-label {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #C56A45;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #173F35;
+}
+
+.admin-header h1 span {
+    color: #C56A45;
+}
+
+.admin-subtitle {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.admin-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 15px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    color: #173F35;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admin-status span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4C8A68;
+}
+
+
+/* =========================
+   ADMIN STATISTICS
+========================= */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 55px;
+}
+
+.admin-stat-card {
+    background: #ffffff;
+    padding: 25px;
+    border-left: 3px solid #173F35;
+    box-shadow: 0 8px 25px rgba(23, 63, 53, 0.07);
+}
+
+.admin-stat-card span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+.admin-stat-card strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #173F35;
+}
+
+
+/* =========================
+   BOOKINGS SECTION
+========================= */
+
+.admin-bookings {
+    background: #ffffff;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(23, 63, 53, 0.07);
+}
+
+.admin-section-heading {
+    margin-bottom: 28px;
+}
+
+.admin-section-heading h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #173F35;
+}
+
+
+/* =========================
+   BOOKING TABLE
+========================= */
+
+.booking-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.booking-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+.booking-table th {
+    padding: 14px 15px;
+    text-align: left;
+    background: #F8F6F0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #173F35;
+}
+
+.booking-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #555;
+}
+
+.booking-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.booking-table tbody tr:hover {
+    background: #faf9f5;
+}
+
+.booking-table td strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #252525;
+}
+
+.booking-table td small {
+    display: block;
+    font-size: 10px;
+    color: #888;
+}
+
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.status-badge.pending {
+    background: #F3E9D7;
+    color: #9A6A24;
+}
+
+.status-badge.confirmed {
+    background: #E2F0E7;
+    color: #39704F;
+}
+
+.status-badge.cancelled {
+    background: #F3E1DE;
+    color: #A64D3A;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.admin-action-btn {
+    padding: 8px 13px;
+    background: transparent;
+    border: 1px solid #173F35;
+    color: #173F35;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.admin-action-btn:hover {
+    background: #173F35;
+    color: #ffffff;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-page {
+        padding: 45px 5%;
+    }
+
+    .admin-header h1 {
+        font-size: 40px;
+    }
+
+    .admin-subtitle {
+        font-size: 13px;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 35px;
+    }
+
+    .admin-stat-card {
+        padding: 20px;
+    }
+
+    .admin-stat-card strong {
+        font-size: 30px;
+    }
+
+    .admin-bookings {
+        padding: 22px 15px;
+    }
+
+    .admin-section-heading h2 {
+        font-size: 27px;
+    }
+
+}
+/* =========================================================
+   ADMIN BOOKING DETAILS MODAL
+========================================================= */
+
+.booking-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(23, 63, 53, 0.55);
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.booking-modal-content {
+    width: 100%;
+    max-width: 650px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #F8F6F0;
+
+    padding: 35px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.booking-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.booking-modal-header .admin-label {
+    margin-bottom: 8px;
+}
+
+.booking-modal-header h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    font-weight: 600;
+
+    color: #173F35;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.modal-close-btn {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #173F35;
+
+    background: transparent;
+
+    color: #173F35;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.modal-close-btn:hover {
+    background: #173F35;
+    color: #ffffff;
+}
+
+
+/* =========================
+   MODAL DETAILS
+========================= */
+
+.modal-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.modal-detail-item {
+    background: #ffffff;
+
+    padding: 17px;
+
+    border: 1px solid #eeeeee;
+}
+
+.modal-detail-item span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #888888;
+}
+
+.modal-detail-item strong {
+    display: block;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #252525;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   MODAL ACTIONS
+========================= */
+
+.modal-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #dddddd;
+}
+
+.confirm-booking-btn,
+.cancel-booking-btn {
+    flex: 1;
+
+    min-height: 45px;
+
+    border: none;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================
+   CONFIRM BUTTON
+========================= */
+
+.confirm-booking-btn {
+    background: #173F35;
+
+    color: #ffffff;
+}
+
+.confirm-booking-btn:hover {
+    background: #C56A45;
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.cancel-booking-btn {
+    background: transparent;
+
+    color: #A64D3A;
+
+    border: 1px solid #A64D3A;
+}
+
+.cancel-booking-btn:hover {
+    background: #A64D3A;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   MOBILE MODAL
+========================= */
+
+@media (max-width: 600px) {
+
+    .booking-modal {
+        padding: 15px;
+    }
+
+    .booking-modal-content {
+        padding: 25px 20px;
+    }
+
+    .booking-modal-header h2 {
+        font-size: 27px;
+    }
+
+    .modal-details {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+}

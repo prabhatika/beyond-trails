@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Panel | Beyond Trails</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ADMIN PANEL
+    ========================= -->
+
+    <section class="admin-page">
+
+        <div class="admin-container">
+
+
+            <!-- =========================
+                 ADMIN HEADER
+            ========================= -->
+
+            <div class="admin-header">
+
+                <div>
+
+                    <p class="admin-label">
+                        BEYOND TRAILS
+                    </p>
+
+                    <h1>
+                        Admin <span>Panel</span>
+                    </h1>
+
+                    <p class="admin-subtitle">
+                        Manage your bookings and adventures.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-status">
+
+                    <span></span>
+
+                    Backend Connected
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 BOOKING STATISTICS
+            ========================= -->
+
+            <div class="admin-stats">
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        TOTAL BOOKINGS
+                    </span>
+
+                    <strong id="totalBookings">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        PENDING
+                    </span>
+
+                    <strong id="pendingBookings">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        CONFIRMED
+                    </span>
+
+                    <strong id="confirmedBookings">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        CANCELLED
+                    </span>
+
+                    <strong id="cancelledBookings">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 BOOKINGS SECTION
+            ========================= -->
+
+            <div class="admin-bookings">
+
+                <div class="admin-section-heading">
+
+                    <div>
+
+                        <p class="admin-label">
+                            BOOKING MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Recent Bookings
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     BOOKINGS TABLE
+                ========================= -->
+
+                <div class="booking-table-wrapper">
+
+                    <table class="booking-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Booking
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="bookingTableBody">
+
+                            <tr>
+
+                                <td colspan="6">
+
+                                    Loading bookings...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     BOOKING DETAILS MODAL
+========================= -->
+
+<div
+    id="bookingModal"
+    class="booking-modal"
+>
+
+    <div class="booking-modal-content">
+
+
+        <!-- =========================
+             MODAL HEADER
+        ========================= -->
+
+        <div class="booking-modal-header">
+
+            <div>
+
+                <p class="admin-label">
+                    BOOKING DETAILS
+                </p>
+
+                <h2 id="modalBookingTitle">
+                    Booking Details
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeBookingModal"
+                class="modal-close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             CUSTOMER DETAILS
+        ========================= -->
+
+        <div class="modal-details">
+
+            <div class="modal-detail-item">
+
+                <span>
+                    CUSTOMER
+                </span>
+
+                <strong id="modalCustomerName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    PHONE
+                </span>
+
+                <strong id="modalCustomerPhone">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    EMAIL
+                </span>
+
+                <strong id="modalCustomerEmail">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    BOOKING TYPE
+                </span>
+
+                <strong id="modalBookingType">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    SELECTED
+                </span>
+
+                <strong id="modalBookingItem">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    DATE
+                </span>
+
+                <strong id="modalBookingDate">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    AMOUNT
+                </span>
+
+                <strong id="modalBookingAmount">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-item">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong id="modalBookingStatus">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ACTION BUTTONS
+        ========================= -->
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                id="confirmBookingBtn"
+                class="confirm-booking-btn"
+            >
+                CONFIRM BOOKING
+            </button>
+
+
+            <button
+                type="button"
+                id="cancelBookingBtn"
+                class="cancel-booking-btn"
+            >
+                CANCEL BOOKING
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

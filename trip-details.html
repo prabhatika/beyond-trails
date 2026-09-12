@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================
+         DYNAMIC PAGE TITLE
+    ========================= -->
+    <title id="pageTitle">Trip Details | Beyond Trails</title>
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- ========================= HIDE TRIP PAGE BEFORE DATA LOAD ========================= -->
+
+<style>
+    body {
+        .trip-details-page{
+        visibility: hidden;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         TRIP DETAILS PAGE
+    ========================= -->
+
+    <main class="trip-details-page">
+
+
+        <!-- =========================
+             BACK TO TRIPS
+        ========================= -->
+
+        <a href="index.html#trips" class="back-trips">
+            ← BACK TO TRIPS
+        </a>
+
+
+        <!-- =========================
+             DYNAMIC HERO SECTION
+        ========================= -->
+
+        <section class="trip-hero">
+
+            <img
+                id="tripHeroImage"
+                src=" "
+                alt="Trip"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="trip-hero-content">
+
+                <p class="trip-label" id="tripHeroLabel">
+                    
+                </p>
+
+                <h1 id="tripHeroTitle">
+                    
+                </h1>
+
+                <p id="tripHeroDescription">
+                    
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DYNAMIC TRIP QUICK INFO
+        ========================= -->
+
+        <section class="trip-info-bar">
+
+            <div class="quick-info">
+
+                <span class="quick-icon">⌖</span>
+
+                <div>
+                    <strong id="tripLocation">
+                        West Bengal
+                    </strong>
+
+                    <small>
+                        Location
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="quick-info">
+
+                <span class="quick-icon">▣</span>
+
+                <div>
+                    <strong id="tripDuration">
+                        6 Days / 5 Nights
+                    </strong>
+
+                    <small>
+                        Duration
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="quick-info">
+
+                <span class="quick-icon">₹</span>
+
+                <div>
+                    <strong id="tripPrice">
+                        ₹9,999
+                    </strong>
+
+                    <small>
+                        Per Person
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="quick-info">
+
+                <span class="quick-icon">♧</span>
+
+                <div>
+                    <strong id="tripSeats">
+                        8 Seats
+                    </strong>
+
+                    <small>
+                        Available
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DYNAMIC PHOTO GALLERY
+        ========================= -->
+
+        <section class="trip-gallery">
+
+            <div class="gallery-image">
+                <img
+                    id="galleryImage1"
+                    src="image/sandakphu.jpg"
+                    alt="Trip Image"
+                >
+            </div>
+
+
+            <div class="gallery-image">
+                <img
+                    id="galleryImage2"
+                    src=""
+                    alt="Trip Gallery Image"
+                >
+            </div>
+
+
+            <div class="gallery-image">
+                <img
+                    id="galleryImage3"
+                    src=""
+                    alt="Trip Gallery Image"
+                >
+            </div>
+
+
+            <div class="gallery-image">
+                <img
+                    id="galleryImage4"
+                    src=""
+                    alt="Trip Gallery Image"
+                >
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAIN TRIP CONTENT
+        ========================= -->
+
+        <section class="trip-main-content">
+
+
+            <!-- =========================
+                 LEFT CONTENT
+            ========================= -->
+
+            <div class="trip-left">
+
+
+                <!-- =========================
+                     ABOUT THE JOURNEY
+                ========================= -->
+
+                <section class="about-journey">
+
+                    <p class="section-label">
+                        ABOUT THE JOURNEY
+                    </p>
+
+                    <h2 id="aboutTitle">
+                        Discover Sandakphu
+                    </h2>
+
+                    <div id="aboutDescription">
+
+                        <p>
+                            Sandakphu, the highest peak in West Bengal,
+                            is a dream destination for every mountain lover.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     ITINERARY SECTION
+                ========================= -->
+
+                <section class="itinerary-section">
+
+                    <p class="section-label">
+                        ITINERARY
+                    </p>
+
+                    <h2 id="itineraryTitle">
+                        Your Journey
+                    </h2>
+
+
+                    <!-- =========================
+                         DYNAMIC ITINERARY
+                    ========================= -->
+
+                    <div id="itineraryContainer">
+                        <!-- JavaScript will insert itinerary here -->
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =========================
+                 RIGHT SIDEBAR
+            ========================= -->
+
+            <aside class="trip-sidebar">
+
+
+                <!-- =========================
+                     INCLUDED
+                ========================= -->
+
+                <div class="include-card">
+
+                    <p class="section-label">
+                        INCLUDED
+                    </p>
+
+                    <h2>
+                        What's Included
+                    </h2>
+
+                    <ul id="includedList">
+                        <!-- JavaScript will insert items -->
+                    </ul>
+
+                </div>
+
+
+                <!-- =========================
+                     NOT INCLUDED
+                ========================= -->
+
+                <div class="include-card">
+
+                    <p class="section-label red">
+                        NOT INCLUDED
+                    </p>
+
+                    <h2>
+                        What's Not Included
+                    </h2>
+
+                    <ul
+                        class="not-included"
+                        id="excludedList"
+                    >
+                        <!-- JavaScript will insert items -->
+                    </ul>
+
+                </div>
+
+
+                <!-- =========================
+                     BOOKING CTA
+                ========================= -->
+
+                <div class="booking-card">
+
+                    <p>
+                        READY FOR THE ADVENTURE?
+                    </p>
+
+                    <h2 id="bookingTitle">
+                        Start Your Adventure
+                    </h2>
+
+                    <a
+                        href="booking.html"
+                        class="big-book-btn"
+                    >
+                        BOOK NOW →
+                    </a>
+
+                    <small id="bookingSmallText">
+                        Your next adventure starts here.
+                    </small>
+
+                </div>
+
+
+                <!-- =========================
+                     TRIP HIGHLIGHTS
+                ========================= -->
+
+                <div class="trip-highlights">
+
+                    <div>
+
+                        <strong>
+                            Best Season
+                        </strong>
+
+                        <span id="bestSeason">
+                            Mar – May<br>& Sep – Dec
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Difficulty
+                        </strong>
+
+                        <span id="difficulty">
+                            Moderate
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Max Altitude
+                        </strong>
+
+                        <span id="maxAltitude">
+                            11,930 ft
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL QUOTE
+        ========================= -->
+
+        <section class="trip-quote">
+
+            <span>△</span>
+
+            <p>
+                Every step is a story.
+                Every view is a memory.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         MAIN JAVASCRIPT
+    ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
