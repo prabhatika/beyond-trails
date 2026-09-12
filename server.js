@@ -8,7 +8,7 @@ const fs = require("fs");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // =========================
@@ -529,10 +529,10 @@ app.get("/api/trips/availability", (req, res) => {
 // START SERVER
 // =========================
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
 
     console.log(
-        `Beyond Trails server is running at http://localhost:${PORT}`
+        `Beyond Trails server is running on port ${PORT}`
     );
 
 });
